@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "posture-simulator",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2026-04-29",
+  "assets": {
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "POSTURE_KV",
+      "id": "PLACEHOLDER"
+    }
+  ],
+  "vars": {
+    "TEAM_DOMAIN": "https://PLACEHOLDER.cloudflareaccess.com",
+    "POLICY_AUD": "PLACEHOLDER",
+    "CF_ACCOUNT_ID": "PLACEHOLDER"
+  },
+  "secrets_store_secrets": [
+    {
+      "binding": "CF_API_TOKEN",
+      "store_id": "PLACEHOLDER",
+      "secret_name": "posture-sim-api-token"
+    }
+  ]
+}

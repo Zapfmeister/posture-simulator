@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import type { HonoEnv } from "./types";
 import { accessAuth } from "./middleware/auth";
 import { config } from "./routes/config";
+import { devices } from "./routes/devices";
 import { posture } from "./routes/posture";
 
 const app = new Hono<HonoEnv>();
@@ -19,5 +20,8 @@ app.route("/api/posture", posture);
 
 // Config CRUD (called by admin UI)
 app.route("/api/config", config);
+
+// Device listing (called by admin UI, proxies CF API)
+app.route("/api/devices", devices);
 
 export default app;

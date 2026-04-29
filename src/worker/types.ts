@@ -39,6 +39,13 @@ export interface PostureConfig {
   default_score: number;
 }
 
+export type HonoEnv = {
+  Bindings: Env;
+  Variables: {
+    jwtPayload: Record<string, unknown>;
+  };
+};
+
 export interface CloudflareDevice {
   id: string;
   name: string;

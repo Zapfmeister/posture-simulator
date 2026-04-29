@@ -1,12 +1,15 @@
 import { Hono } from "hono";
-import type { Env } from "./types";
-
-type HonoEnv = { Bindings: Env };
+import type { HonoEnv } from "./types";
+import { accessAuth } from "./middleware/auth";
 
 const app = new Hono<HonoEnv>();
 
+// Health check (no auth required)
 app.get("/api/health", (c) => {
   return c.json({ status: "ok" });
 });
+
+// All other API routes require Access JWT validation
+app.use("/api/*", accessAuth);
 
 export default app;

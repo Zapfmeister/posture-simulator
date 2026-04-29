@@ -2,7 +2,7 @@
 
 A Cloudflare Workers application that simulates custom device posture checks for Cloudflare Zero Trust. Allows administrators to assign arbitrary posture scores (0-100) to enrolled WARP devices via a web interface, enabling testing of posture-based access policies without a real endpoint security product.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gzapf/posture-simulator)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Zapfmeister/posture-simulator)
 
 ## How it works
 

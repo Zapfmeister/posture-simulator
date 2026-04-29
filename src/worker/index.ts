@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import type { HonoEnv } from "./types";
 import { accessAuth } from "./middleware/auth";
 import { config } from "./routes/config";
+import { posture } from "./routes/posture";
 
 const app = new Hono<HonoEnv>();
 
@@ -13,7 +14,10 @@ app.get("/api/health", (c) => {
 // All other API routes require Access JWT validation
 app.use("/api/*", accessAuth);
 
-// Config CRUD
+// Posture scoring (called by CF One Client)
+app.route("/api/posture", posture);
+
+// Config CRUD (called by admin UI)
 app.route("/api/config", config);
 
 export default app;

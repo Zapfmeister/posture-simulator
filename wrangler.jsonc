@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "posture-simulator",
+  "main": "./src/worker/index.ts",
+  "compatibility_date": "2026-04-29",
+  "assets": {
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "POSTURE_KV",
+      "id": "PLACEHOLDER"
+    }
+  ],
+  "vars": {
+    "TEAM_DOMAIN": "PLACEHOLDER",
+    "POLICY_AUD": "PLACEHOLDER",
+    "CF_ACCOUNT_ID": "PLACEHOLDER"
+  }
+}
